@@ -228,12 +228,13 @@ async function inicializarAplicacion() {
       : "Ocurrió un error inesperado al cargar el catálogo.";
     elements.estadoCatalogo.classList.add("error");
     elements.conteoResultados.textContent = "";
-    elements.listaProductos.products = [];
+    elements.listaProductos.replaceChildren();
     mostrarCarrito();
   }
 }
 
 elements.busqueda.addEventListener("input", mostrarProductos);
+document.querySelector("#filtros").addEventListener("submit", (event) => event.preventDefault());
 elements.categoria.addEventListener("change", mostrarProductos);
 elements.orden.addEventListener("change", mostrarProductos);
 elements.disponibles.addEventListener("change", mostrarProductos);

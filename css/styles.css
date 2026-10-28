@@ -32,8 +32,8 @@ a { color: inherit; text-decoration: none; }
 .icono-carrito-encabezado { font-size: 18px; color: var(--green); }
 .conteo-carrito { min-width: 24px; height: 24px; padding: 0 6px; display: grid; place-items: center; border-radius: 20px; background: var(--mint); color: var(--green-dark); font-size: 12px; }
 
-.portada { position: relative; min-height: 490px; padding: 75px max(11.5vw, 36px) 76px; overflow: hidden; background: #edf6f1; }
-.contenido-portada { position: relative; z-index: 1; max-width: 520px; }
+.portada { padding: 68px max(11.5vw, 36px) 48px; background: #edf6f1; }
+.contenido-portada { max-width: 620px; }
 .rotulo { margin: 0 0 14px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.65px; }
 .punto-rotulo { display: inline-block; width: 7px; height: 7px; margin-right: 7px; vertical-align: 1px; border-radius: 50%; background: #f2a270; }
 h1, h2, h3, p { margin-top: 0; }
@@ -43,28 +43,11 @@ h1, h2, h3 { font-family: "Segoe UI", sans-serif; }
 .descripcion-portada { max-width: 390px; margin: 20px 0 27px; color: #687871; font-size: 14px; line-height: 1.8; }
 .enlace-portada { display: inline-flex; align-items: center; gap: 12px; color: var(--green-dark); font-size: 13px; font-weight: 700; }
 .enlace-portada span { font-size: 17px; }
-.estadisticas-portada { position: absolute; left: max(11.5vw, 36px); bottom: 30px; display: flex; align-items: center; gap: 24px; }
+.estadisticas-portada { display: flex; align-items: center; gap: 24px; margin-top: 34px; }
 .estadisticas-portada div { display: grid; gap: 2px; }
 .estadisticas-portada strong { font: 800 17px "Segoe UI", sans-serif; }
 .estadisticas-portada span:not(.separador-estadisticas) { color: #75827d; font-size: 10px; }
 .separador-estadisticas { height: 33px; border-left: 1px solid #cadbd1; }
-.ilustracion-portada { position: absolute; top: 20px; right: 7%; width: min(45vw, 540px); height: 430px; }
-.orbita-portada { position: absolute; border: 1px solid rgba(12, 139, 103, .14); border-radius: 50%; transform: rotate(-25deg); }
-.orbita-uno { width: 410px; height: 280px; top: 65px; left: 60px; }
-.orbita-dos { width: 500px; height: 340px; top: 36px; left: 18px; }
-.producto-portada { position: absolute; z-index: 1; box-shadow: 0 25px 45px rgba(28, 72, 56, .19); }
-.teclado-portada { top: 130px; left: 105px; width: 246px; height: 124px; padding: 14px; border: 5px solid #20332f; border-radius: 15px; background: linear-gradient(140deg, #455d56, #20332f); transform: rotate(-13deg); }
-.parte-superior-teclado { height: 8px; width: 38px; margin: -4px auto 8px; border-radius: 6px; background: #92ae9f; }
-.teclas-teclado { height: 76px; border-radius: 5px; background: repeating-linear-gradient(90deg, transparent 0 17px, rgba(20, 42, 34, .7) 17px 20px), repeating-linear-gradient(0deg, #b9d1c5 0 12px, #668779 12px 15px); }
-.audifonos-portada { top: 58px; right: 49px; width: 105px; height: 118px; border: 15px solid #1e3830; border-bottom-color: transparent; border-radius: 60px 60px 25px 25px; transform: rotate(15deg); box-shadow: none; }
-.audifonos-portada span { position: absolute; bottom: -5px; left: -19px; width: 24px; height: 46px; border-radius: 9px; background: #245343; box-shadow: 82px 0 0 #245343; }
-.raton-portada { right: 104px; bottom: 79px; width: 76px; height: 112px; border: 5px solid #fff; border-radius: 42px; background: linear-gradient(90deg, #f8faf8, #d6e5dc); transform: rotate(22deg); }
-.raton-portada span { position: absolute; top: 10px; left: 32px; width: 2px; height: 25px; background: #91aa9c; }
-.destello-ilustracion { position: absolute; color: #e8915b; }
-.destello-uno { top: 59px; left: 82px; font-size: 22px; }
-.destello-dos { right: 27px; bottom: 108px; font-size: 18px; }
-.rotulo-ilustracion { position: absolute; right: 12px; bottom: 31px; color: #709080; font-size: 9px; line-height: 1.6; letter-spacing: 1px; transform: rotate(-8deg); }
-.rotulo-ilustracion strong { color: var(--green); }
 
 .seccion-catalogo, .seccion-carrito { padding: 76px max(8vw, 28px); }
 .seccion-catalogo { background: #fff; }
@@ -92,6 +75,7 @@ h1, h2, h3 { font-family: "Segoe UI", sans-serif; }
 .limpiar-filtros { border: 0; background: transparent; color: var(--green); font-size: 12px; font-weight: 700; white-space: nowrap; }
 .limpiar-filtros:hover { color: var(--green-dark); }
 .mensaje-estado { margin: 0 0 14px; color: #6a7972; font-size: 13px; }
+.mensaje-estado.error { color: #8c4838; }
 .mensaje-estado:empty { display: none; }
 
 product-list { display: block; }
@@ -185,7 +169,6 @@ shopping-cart { display: block; }
 @media (max-width: 900px) {
   .portada { padding-left: 7vw; }
   .estadisticas-portada { left: 7vw; }
-  .ilustracion-portada { right: -2%; transform: scale(.85); transform-origin: center right; }
   .cuadricula-productos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .filtros { flex-wrap: wrap; }
   .control-busqueda { flex-basis: 100%; }
@@ -194,11 +177,10 @@ shopping-cart { display: block; }
 @media (max-width: 650px) {
   .encabezado-sitio { height: 66px; padding: 0 20px; }
   .carrito-encabezado { gap: 7px; font-size: 11px; }
-  .portada { min-height: 560px; padding: 47px 24px 240px; }
+  .portada { padding: 47px 24px 38px; }
   .portada h1 { font-size: 39px; }
   .descripcion-portada { max-width: 330px; font-size: 13px; }
-  .ilustracion-portada { top: 246px; right: 50%; width: 380px; height: 285px; transform: translateX(50%) scale(.68); transform-origin: top center; }
-  .estadisticas-portada { bottom: 19px; left: 24px; gap: 15px; }
+  .estadisticas-portada { gap: 15px; margin-top: 27px; }
   .seccion-catalogo, .seccion-carrito { padding: 53px 20px; }
   .encabezado-seccion { align-items: start; }
   .encabezado-seccion h2 { max-width: 280px; }
