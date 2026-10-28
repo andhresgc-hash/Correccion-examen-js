@@ -78,4 +78,4 @@ export class TarjetaProducto extends HTMLElement {
   }
 }
 
-customElements.define("tarjeta-producto", TarjetaProducto);
+customElements.define("product-card", TarjetaProducto);

@@ -1,4 +1,4 @@
-import { obtenerIconoProducto } from "./tarjeta-producto.js";
+import { obtenerIconoProducto } from "./product-card.js";
 
 const currency = new Intl.NumberFormat("es-CO", {
   style: "currency", currency: "COP", maximumFractionDigits: 0,

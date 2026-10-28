@@ -1,4 +1,4 @@
-import "./tarjeta-producto.js";
+import "./product-card.js";
 
 export class ListaProductos extends HTMLElement {
   set products(value) {
@@ -25,7 +25,7 @@ export class ListaProductos extends HTMLElement {
     const grid = document.createElement("div");
     grid.className = "cuadricula-productos";
     for (const product of this._products) {
-      const card = document.createElement("tarjeta-producto");
+      const card = document.createElement("product-card");
       card.product = product;
       grid.append(card);
     }

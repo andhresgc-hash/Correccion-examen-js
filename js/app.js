@@ -64,7 +64,7 @@ function mostrarCarrito() {
 
 function mostrarProductos() {
   const query = elements.busqueda.value.trim().toLocaleLowerCase("es");
-  const category = elements.category.value;
+  const category = elements.categoria.value;
   const onlyAvailable = elements.disponibles.checked;
   const sort = elements.orden.value;
 
@@ -89,7 +89,7 @@ function cargarCategorias() {
     const option = document.createElement("option");
     option.value = category;
     option.textContent = category;
-    elements.category.append(option);
+    elements.categoria.append(option);
   }
 }
 
@@ -234,12 +234,12 @@ async function inicializarAplicacion() {
 }
 
 elements.busqueda.addEventListener("input", mostrarProductos);
-elements.category.addEventListener("change", mostrarProductos);
+elements.categoria.addEventListener("change", mostrarProductos);
 elements.orden.addEventListener("change", mostrarProductos);
 elements.disponibles.addEventListener("change", mostrarProductos);
 elements.limpiarFiltros.addEventListener("click", () => {
   elements.busqueda.value = "";
-  elements.category.value = "";
+  elements.categoria.value = "";
   elements.orden.value = "";
   elements.disponibles.checked = false;
   mostrarProductos();
