@@ -31,20 +31,6 @@ export class TarjetaProducto extends HTMLElement {
     this.className = "tarjeta-producto";
     this.replaceChildren();
 
-    const visual = document.createElement("div");
-    visual.className = "visual-producto";
-    const category = document.createElement("span");
-    category.className = "categoria-producto";
-    category.textContent = product.category;
-    const stock = document.createElement("span");
-    stock.className = `etiqueta-existencias${available ? "" : " agotado"}`;
-    stock.textContent = available ? `${product.stock} disponibles` : (product.active ? "Agotado" : "No disponible");
-    const emoji = document.createElement("span");
-    emoji.className = "icono-producto";
-    emoji.setAttribute("aria-hidden", "true");
-    emoji.textContent = obtenerIconoProducto(product.name);
-    visual.append(category, stock, emoji);
-
     const info = document.createElement("div");
     info.className = "informacion-producto";
     const title = document.createElement("h3");
@@ -54,16 +40,11 @@ export class TarjetaProducto extends HTMLElement {
     description.textContent = product.description;
     const bottom = document.createElement("div");
     bottom.className = "pie-producto";
-    const price = document.createElement("strong");
-    price.className = "precio-producto";
-    price.textContent = new Intl.NumberFormat("es-CO", {
-      style: "currency", currency: "COP", maximumFractionDigits: 0,
-    }).format(product.price);
     const button = document.createElement("button");
     button.className = "boton-agregar";
     button.type = "button";
     button.disabled = !available;
-    button.textContent = available ? "＋ Agregar" : "No disponible";
+    button.textContent = available ? "Agregar al carrito" : "No disponible";
     button.setAttribute("aria-label", `${available ? "Agregar" : "No disponible"} ${product.name} al carrito`);
     button.addEventListener("click", () => {
       this.dispatchEvent(new CustomEvent("add-to-cart", {
@@ -72,9 +53,9 @@ export class TarjetaProducto extends HTMLElement {
         composed: true,
       }));
     });
-    bottom.append(price, button);
+    bottom.append(button);
     info.append(title, description, bottom);
-    this.append(visual, info);
+    this.append(info);
   }
 }
 

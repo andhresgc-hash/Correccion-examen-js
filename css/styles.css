@@ -80,22 +80,14 @@ h1, h2, h3 { font-family: "Segoe UI", sans-serif; }
 
 product-list { display: block; }
 .cuadricula-productos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
-.tarjeta-producto { min-width: 0; overflow: hidden; border: 1px solid #edf0ee; border-radius: 12px; background: #fff; transition: transform .2s ease, box-shadow .2s ease; }
-.tarjeta-producto:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30, 55, 45, .08); }
-.visual-producto { position: relative; height: 150px; display: grid; place-items: center; overflow: hidden; background: #f2f7f4; }
-.visual-producto::before, .visual-producto::after { position: absolute; border: 1px solid rgba(12, 139, 103, .12); border-radius: 50%; content: ""; }
-.visual-producto::before { width: 170px; height: 170px; }
-.visual-producto::after { width: 128px; height: 128px; }
-.icono-producto { position: relative; z-index: 1; display: grid; width: 94px; height: 94px; place-items: center; border-radius: 28px; background: #fff; box-shadow: 0 12px 22px rgba(43, 79, 63, .11); font-size: 42px; transform: rotate(-6deg); }
-.categoria-producto { position: absolute; z-index: 1; top: 12px; left: 12px; padding: 5px 8px; border-radius: 20px; background: rgba(255,255,255,.9); color: #60736a; font-size: 9px; font-weight: 700; }
-.etiqueta-existencias { position: absolute; z-index: 1; top: 12px; right: 10px; color: var(--green-dark); font-size: 9px; font-weight: 700; }
-.etiqueta-existencias.agotado { color: #a65c44; }
-.informacion-producto { padding: 15px; }
-.informacion-producto h3 { min-height: 39px; margin: 0 0 5px; font-size: 14px; line-height: 1.4; letter-spacing: -.3px; }
-.descripcion-producto { min-height: 34px; margin: 0 0 13px; color: #7d8983; font-size: 10px; line-height: 1.6; }
-.pie-producto { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.precio-producto { color: var(--ink); font: 800 15px "Segoe UI", sans-serif; white-space: nowrap; }
+.tarjeta-producto { min-width: 0; overflow: hidden; border: 2px solid #c7d6ce; border-radius: 12px; background: #fff; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.tarjeta-producto:hover { transform: translateY(-3px); border-color: var(--green); box-shadow: 0 12px 28px rgba(30, 55, 45, .1); }
+.informacion-producto { display: flex; min-height: 190px; flex-direction: column; align-items: stretch; padding: 18px; }
+.informacion-producto h3 { margin: 0 0 8px; font-size: 15px; line-height: 1.4; letter-spacing: -.3px; }
+.descripcion-producto { margin: 0 0 18px; color: #7d8983; font-size: 12px; line-height: 1.6; }
+.pie-producto { display: flex; align-items: center; gap: 8px; margin-top: auto; }
 .boton-agregar { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 33px; padding: 0 10px; border: 0; border-radius: 7px; background: var(--green); color: #fff; font-size: 10px; font-weight: 700; transition: background .2s; }
+.pie-producto .boton-agregar { width: 100%; min-height: 38px; font-size: 12px; }
 .boton-agregar:hover:not(:disabled) { background: var(--green-dark); }
 .boton-agregar:disabled { background: #e5eae7; color: #8b9691; cursor: not-allowed; }
 .estado-vacio { grid-column: 1 / -1; padding: 50px 20px; text-align: center; border: 1px dashed #dce5df; border-radius: 12px; color: #6b7972; font-size: 13px; }
@@ -191,13 +183,8 @@ shopping-cart { display: block; }
   .filtro-disponibles { padding: 4px; }
   .limpiar-filtros { margin-left: auto; padding: 5px; }
   .cuadricula-productos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
-  .visual-producto { height: 125px; }
-  .icono-producto { width: 76px; height: 76px; font-size: 34px; }
-  .informacion-producto { padding: 12px; }
+  .informacion-producto { min-height: 180px; padding: 14px; }
   .informacion-producto h3 { font-size: 12px; }
-  .pie-producto { align-items: flex-start; flex-direction: column; }
-  .precio-producto { font-size: 14px; }
-  .boton-agregar { width: 100%; }
   .distribucion-carrito { grid-template-columns: 1fr; }
   .linea-carrito { grid-template-columns: 42px minmax(70px, 1fr) auto; gap: 10px; padding: 13px; }
   .icono-linea-carrito { width: 40px; height: 40px; font-size: 20px; }
