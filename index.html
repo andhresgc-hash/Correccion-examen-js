@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Explora el catálogo de TecnoStock y prepara tu pedido.">
+    <title>Tienda de tecnología | TecnoStock</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="module" src="./js/app.js"></script>
+  </head>
+  <body>
+    <header class="encabezado-sitio">
+      <a class="marca" href="#" aria-label="TecnoStock, ir al inicio">
+        <span class="icono-marca" aria-hidden="true">T<span>.</span></span>
+        <span class="nombre-marca">tecno<span>stock</span></span>
+      </a>
+      <a class="carrito-encabezado" href="#carrito" aria-label="Ir al carrito">
+        <span class="icono-carrito-encabezado" aria-hidden="true">▣</span>
+        <span>Mi carrito</span>
+        <span class="conteo-carrito" id="conteo-carrito-encabezado">0</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="portada">
+        <div class="contenido-portada">
+          <p class="rotulo"><span class="punto-rotulo"></span> TECNOLOGÍA QUE TE ACOMPAÑA</p>
+          <h1>Todo lo que necesitas,<br><span>en un solo lugar.</span></h1>
+          <p class="descripcion-portada">Encuentra tus accesorios favoritos y arma tu pedido de forma fácil y segura.</p>
+          <a class="enlace-portada" href="#catalogo">Explorar catálogo <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="ilustracion-portada" aria-hidden="true">
+          <div class="orbita-portada orbita-uno"></div>
+          <div class="orbita-portada orbita-dos"></div>
+          <div class="producto-portada teclado-portada">
+            <div class="parte-superior-teclado"></div><div class="teclas-teclado"></div>
+          </div>
+          <div class="producto-portada audifonos-portada"><span></span></div>
+          <div class="producto-portada raton-portada"><span></span></div>
+          <span class="destello-ilustracion destello-uno">✦</span><span class="destello-ilustracion destello-dos">✳</span>
+          <div class="rotulo-ilustracion">TU ESPACIO<br><strong>UPGRADEADO</strong></div>
+        </div>
+        <div class="estadisticas-portada">
+          <div><strong>12+</strong><span>productos seleccionados</span></div>
+          <span class="separador-estadisticas"></span>
+          <div><strong>100%</strong><span>compra a tu ritmo</span></div>
+        </div>
+      </section>
+
+      <section class="seccion-catalogo" id="catalogo">
+        <div class="encabezado-seccion">
+          <div>
+            <p class="rotulo">NUESTRO CATÁLOGO</p>
+            <h2>Encuentra tu próximo favorito</h2>
+            <p class="subtitulo-seccion">Productos pensados para acompañarte todos los días.</p>
+          </div>
+          <p class="conteo-resultados-productos" id="conteo-resultados" aria-live="polite"></p>
+        </div>
+
+        <form class="filtros" id="filtros" role="search">
+          <label class="control-busqueda">
+            <span class="solo-lectores">Buscar productos</span>
+            <span class="icono-busqueda" aria-hidden="true">⌕</span>
+            <input id="entrada-busqueda" type="search" placeholder="¿Qué estás buscando?" autocomplete="off">
+          </label>
+          <label class="control-seleccion">
+            <span class="solo-lectores">Filtrar por categoría</span>
+            <select id="filtro-categoria">
+              <option value="">Todas las categorías</option>
+            </select>
+            <span class="flecha-seleccion" aria-hidden="true">⌄</span>
+          </label>
+          <label class="control-seleccion">
+            <span class="solo-lectores">Ordenar productos por precio</span>
+            <select id="filtro-orden">
+              <option value="">Ordenar por</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+            </select>
+            <span class="flecha-seleccion" aria-hidden="true">⌄</span>
+          </label>
+          <label class="filtro-disponibles">
+            <input id="filtro-disponibles" type="checkbox">
+            <span class="interruptor" aria-hidden="true"></span>
+            <span>Disponibles</span>
+          </label>
+          <button class="limpiar-filtros" id="limpiar-filtros" type="button">Limpiar</button>
+        </form>
+
+        <p class="mensaje-estado" id="estado-catalogo" role="status" aria-live="polite">Cargando el catálogo…</p>
+        <product-list id="lista-productos" aria-live="polite"></product-list>
+      </section>
+
+      <section class="seccion-carrito" id="carrito">
+        <div class="encabezado-carrito">
+          <div>
+            <p class="rotulo">TU SELECCIÓN</p>
+            <h2>Tu carrito</h2>
+          </div>
+          <span class="conteo-productos-carrito" id="conteo-productos-carrito">0 productos</span>
+        </div>
+        <div class="distribucion-carrito">
+          <shopping-cart id="carrito-compras"></shopping-cart>
+          <aside class="resumen-pedido" aria-labelledby="titulo-resumen">
+            <h3 id="titulo-resumen">Resumen del pedido</h3>
+            <div class="fila-resumen"><span>Unidades</span><strong id="resumen-unidades">0</strong></div>
+            <div class="fila-resumen"><span>Subtotal</span><strong id="resumen-subtotal">$ 0</strong></div>
+            <div class="fila-resumen fila-descuento"><span>Descuento <span class="ayuda-descuento">10% desde $300.000</span></span><strong id="resumen-descuento">− $ 0</strong></div>
+            <div class="total-resumen"><span>Total</span><strong id="resumen-total">$ 0</strong></div>
+            <button class="boton-confirmacion" id="confirmar-pedido" type="button" disabled>
+              Confirmar pedido <span aria-hidden="true">→</span>
+            </button>
+            <p class="nota-confirmacion"><span aria-hidden="true">◇</span> Compra simulada, sin pagos reales.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-sitio">
+      <a class="marca marca-pie" href="#" aria-label="TecnoStock, ir al inicio">
+        <span class="icono-marca" aria-hidden="true">T<span>.</span></span>
+        <span class="nombre-marca">tecno<span>stock</span></span>
+      </a>
+      <p>Accesorios que hacen más fácil tu día.</p>
+      <span>© 2026 TecnoStock</span>
+    </footer>
+
+    <div class="notificacion" id="notificacion" role="status" aria-live="polite"></div>
+
+    <dialog class="dialogo-pedido" id="dialogo-pedido" aria-labelledby="titulo-dialogo-pedido">
+      <div class="icono-dialogo" aria-hidden="true">✓</div>
+      <p class="rotulo">PEDIDO REGISTRADO</p>
+      <h2 id="titulo-dialogo-pedido">¡Listo, tu pedido está preparado!</h2>
+      <p class="introduccion-dialogo">Esta es una simulación local. No se realizó ningún pago ni se modificó el inventario.</p>
+      <p class="identificador-pedido">Número de pedido <strong id="identificador-pedido"></strong></p>
+      <div id="detalles-pedido" class="detalles-pedido"></div>
+      <button class="boton-confirmacion cerrar-dialogo" id="cerrar-dialogo" type="button">Entendido</button>
+    </dialog>
+  </body>
+</html>
