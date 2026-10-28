@@ -1,0 +1,110 @@
+[
+  {
+    "id": 101,
+    "name": "Teclado mecánico",
+    "category": "Periféricos",
+    "price": 189900,
+    "stock": 8,
+    "description": "Teclado USB de respuesta precisa para trabajar y jugar.",
+    "active": true
+  },
+  {
+    "id": 102,
+    "name": "Mouse inalámbrico",
+    "category": "Periféricos",
+    "price": 74900,
+    "stock": 15,
+    "description": "Mouse ergonómico inalámbrico con sensor de alta precisión.",
+    "active": true
+  },
+  {
+    "id": 103,
+    "name": "Audífonos Bluetooth",
+    "category": "Audio",
+    "price": 159900,
+    "stock": 6,
+    "description": "Audífonos cómodos con conexión Bluetooth y sonido envolvente.",
+    "active": true
+  },
+  {
+    "id": 104,
+    "name": "Webcam Full HD",
+    "category": "Periféricos",
+    "price": 129900,
+    "stock": 0,
+    "description": "Cámara Full HD ideal para videollamadas y clases virtuales.",
+    "active": true
+  },
+  {
+    "id": 105,
+    "name": "Hub USB-C 6 en 1",
+    "category": "Accesorios",
+    "price": 119900,
+    "stock": 11,
+    "description": "Expande los puertos de tu portátil con este hub compacto.",
+    "active": true
+  },
+  {
+    "id": 106,
+    "name": "Base refrigerante",
+    "category": "Accesorios",
+    "price": 89900,
+    "stock": 9,
+    "description": "Base ajustable con ventilación para portátiles.",
+    "active": true
+  },
+  {
+    "id": 107,
+    "name": "Parlante portátil",
+    "category": "Audio",
+    "price": 139900,
+    "stock": 5,
+    "description": "Parlante Bluetooth portátil con batería de larga duración.",
+    "active": true
+  },
+  {
+    "id": 108,
+    "name": "Memoria USB 64 GB",
+    "category": "Almacenamiento",
+    "price": 32900,
+    "stock": 24,
+    "description": "Memoria USB 3.0 para llevar tus archivos a todas partes.",
+    "active": true
+  },
+  {
+    "id": 109,
+    "name": "Disco SSD externo 1 TB",
+    "category": "Almacenamiento",
+    "price": 349900,
+    "stock": 4,
+    "description": "Almacenamiento portátil rápido para copias y proyectos.",
+    "active": true
+  },
+  {
+    "id": 110,
+    "name": "Micrófono USB",
+    "category": "Audio",
+    "price": 219900,
+    "stock": 3,
+    "description": "Micrófono USB con captación clara para streaming y reuniones.",
+    "active": true
+  },
+  {
+    "id": 111,
+    "name": "Mouse pad extendido",
+    "category": "Accesorios",
+    "price": 49900,
+    "stock": 18,
+    "description": "Superficie amplia y antideslizante para teclado y mouse.",
+    "active": true
+  },
+  {
+    "id": 112,
+    "name": "Adaptador HDMI",
+    "category": "Accesorios",
+    "price": 45900,
+    "stock": 7,
+    "description": "Adaptador compacto para conectar tus dispositivos a pantallas.",
+    "active": false
+  }
+]
