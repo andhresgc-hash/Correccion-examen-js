@@ -1,4 +1,4 @@
-const CATALOG_URL = "../data/products.json";
+const CATALOG_URL = "./data/products.json";
 
 function esProductoValido(product) {
   return product !== null
